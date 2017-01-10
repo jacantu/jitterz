@@ -57,7 +57,7 @@ router.get('/add-to-cart/:id', function(req, res, next) {
         cart.add(product, product.id);
         req.session.cart = cart;
         console.log(req.session.cart);
-        res.redirect('/');
+        res.redirect('/shopping-cart');
     });
 });
 
@@ -109,7 +109,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
     var cart = new Cart(req.session.cart);
     var stripe = require("stripe")(process.env.SECRET_TEST_KEY);
     stripe.charges.create({
-        amount: cart.totalPrice * 100,
+        amount: cart.grandTotalPrice * 100,
         currency: "usd",
         source: req.body.stripeToken,
         description: "Test Charge"
@@ -128,7 +128,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
         order.save(function(err, result) {
             req.flash('success', 'Successfully bought product!');
             req.session.cart = null;
-            res.redirect('/');
+            res.redirect('/success');
         });
     });
 });
@@ -145,6 +145,10 @@ router.get('/all', function(req, res, next) {
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
+});
+
+router.get('/success', function(req, res, next) {
+  res.render('success', { title: 'success'});
 });
 
 router.get('/blended', function(req, res, next) {
