@@ -4,4 +4,3 @@
 * Reduce and increase by one item or remove them all
 * Stripe payment processing
 * Passport used to authenticate
-* See it live at https://jitterz.herokuapp.com/
