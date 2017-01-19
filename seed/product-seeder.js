@@ -179,7 +179,7 @@ var products = [
       price: 2.75
   }),
   new Product({
-      imagePath: 'https://s27.postimg.org/trl0swh3n/tea.jpg',
+      imagePath: 'https://cdn-starbucks.netdna-ssl.com/uploads/images/_framed/LAeqz6xJ-5616-3744.jpg',
       title: 'Tea',
       category: 'non_coffee',
       description: 'Choose from a variety of seasonal tea flavors.  Available sweetened or unsweetened.',
@@ -187,7 +187,7 @@ var products = [
       price: 2.00
   }),
   new Product({
-    imagePath: 'https://s27.postimg.org/trl0swh3n/tea.jpg',
+    imagePath: 'https://cdn-starbucks.netdna-ssl.com/uploads/images/_framed/LAeqz6xJ-5616-3744.jpg',
       title: 'Tea',
       category: 'non_coffee',
       description: 'Choose from a variety of seasonal tea flavors.  Available sweetened or unsweetened.',
@@ -227,7 +227,7 @@ var products = [
       price: 5.50
   }),
   new Product({
-    imagePath: 'https://s27.postimg.org/7d3ccoec3/oreo_ice_cream_chip.jpg',
+    imagePath: 'http://ghk.h-cdn.co/assets/cm/15/11/54fe5b47e6772-banana-berry-smoothie-recipe-ghk0713-xl.jpg',
       title: 'Fruit Smoothie',
       category: 'non_coffee',
       description: 'Assorted fresh fruits blended with milk and ice.',

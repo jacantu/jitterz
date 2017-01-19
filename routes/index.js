@@ -134,14 +134,15 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
 });
 
 router.get('/menu', function(req, res, next) {
-  Product.find({'size' : 'one_size'},function(err, Product){
+  Product.find({'size' : '16oz' || 'one_size' },function(err, Product){
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
 });
+
 // this one shows only one of each item, not all sizes
 router.get('/all', function(req, res, next) {
-  Product.find({'size' : 'one_size'},function(err, Product){
+  Product.find({'size' : '16oz' || 'one_size' },function(err, Product){
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
@@ -180,7 +181,7 @@ router.get('/specialties_hot', function(req, res, next) {
 });
 
 router.get('/non-coffee', function(req, res, next) {
-  Product.find({'category' : 'non_coffee', 'size' : '12oz'},function(err, Product){
+  Product.find({'category' : 'non_coffee' , 'size' : '16oz'},function(err, Product){
   console.log(Product.length + " products");
   res.render('non-coffee', { title: 'Non-Coffee', Product: Product });
 });
