@@ -1,7 +1,7 @@
 var Product = require('../models/product');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://ja.cantu:jitzsquare@ds033126.mlab.com:33126/jitzsquare');
-var products = [{
+var products = [
   new Product({
       imagePath: 'https://s27.postimg.org/xzft1nij7/slow_bar.jpg',
       title: 'Slow Bar Coffee',
@@ -179,7 +179,7 @@ var products = [{
       price: 2.75
   }),
   new Product({
-      imagePath: 'https://www.totaltea.net/assets/images/photo_of_teacup_-_postcard_-_half_size_gdhp.jpg',
+      imagePath: 'https://s27.postimg.org/trl0swh3n/tea.jpg',
       title: 'Tea',
       category: 'non_coffee',
       description: 'Choose from a variety of seasonal tea flavors.  Available sweetened or unsweetened.',
@@ -187,7 +187,7 @@ var products = [{
       price: 2.00
   }),
   new Product({
-    imagePath: 'https://www.totaltea.net/assets/images/photo_of_teacup_-_postcard_-_half_size_gdhp.jpg',
+    imagePath: 'https://s27.postimg.org/trl0swh3n/tea.jpg',
       title: 'Tea',
       category: 'non_coffee',
       description: 'Choose from a variety of seasonal tea flavors.  Available sweetened or unsweetened.',
@@ -310,11 +310,11 @@ var products = [{
     imagePath: 'https://s27.postimg.org/8vu53wvir/affogato.jpg',
       title: 'Affogato',
       category: 'espresso_standards',
-      description: 'An affogato is a coffee-based dessert. It includes a scoop of vanilla ice cream topped or "drowned" with a shot of hot espresso.'
+      description: 'An affogato is a coffee-based dessert. It includes a scoop of vanilla ice cream topped or "drowned" with a shot of hot espresso.',
       size: 'one_size',
       price: 4.00
   })
-}];
+];
 
 
 /** Loops through products array */

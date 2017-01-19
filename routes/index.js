@@ -134,14 +134,14 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
 });
 
 router.get('/menu', function(req, res, next) {
-  Product.find({'price' : {$gt: 0}, 'size' : '12oz'},function(err, Product){
+  Product.find({'size' : 'one_size'},function(err, Product){
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
 });
 // this one shows only one of each item, not all sizes
 router.get('/all', function(req, res, next) {
-  Product.find({'price' : {$gt: 0}, 'size' : '12oz'},function(err, Product){
+  Product.find({'size' : 'one_size'},function(err, Product){
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
@@ -173,14 +173,14 @@ router.get('/specialties_iced', function(req, res, next) {
 });
 
 router.get('/specialties_hot', function(req, res, next) {
-  Product.find({'category' : 'specialties_hot'},function(err, Product){
+  Product.find({'category' : 'specialties_hot', 'size' : '12oz'},function(err, Product){
   console.log(Product.length + " products");
   res.render('specialties_hot', { title: 'Hot Specialties', Product: Product });
 });
 });
 
 router.get('/non-coffee', function(req, res, next) {
-  Product.find({'category' : 'non_coffee'},function(err, Product){
+  Product.find({'category' : 'non_coffee', 'size' : '12oz'},function(err, Product){
   console.log(Product.length + " products");
   res.render('non-coffee', { title: 'Non-Coffee', Product: Product });
 });
